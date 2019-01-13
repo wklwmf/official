@@ -11,40 +11,26 @@ color:#000000;background:#007222;
 				  height: 28px;
 				  margin: 2px auto auto 90%;}
 		</style>
-		<script type="text/javascript">			
-			function  add()
-			{
-				var content=$("te").value;
-				content=trim(content);
-				if(content.length<1)
-				{
-					alert("请在此处留言……");
-					return;
-				}
-				$("te").value="";
-				var myDate = new Date();
-				var year=myDate.getFullYear();    //获取完整的年份(4位,1970-????)
-				var month=myDate.getMonth();       //获取当前月份(0-11,0代表1月)
-				var day=myDate.getDate();  
-				var hour=myDate.getHours();       //获取当前小时数(0-23)
-                var second=myDate.getMinutes();     //获取当前分钟数(0-59)
-				var minute=myDate.getSeconds();
-				var timeNow=year+"/"+month+"/"+day+" --"+hour+":"+second+":"+minute;				
-				var  w="<pre  style='display:inline;'>"+timeNow+"<br/>"+content+"</pre>";						
-				var newDiv=document.createElement("div");
-				newDiv.className="personal";
-				newDiv.innerHTML=w;
-				var s=$("show");
-				$("show").appendChild(newDiv);
-				s.scrollTop = s.scrollHeight;//自动将滚动条拉到底部
-			}
-		function $(id){
-			return document.getElementById(id);
-		}
-		function trim(str){ //删除左右两端的空格
-　　     return str.replace(/(^\s*)|(\s*$)/g, "");
-　　 }
-		</script>		
+		<script>
+window.onload=function(){
+    var text=document.getElementById('text');
+    var btn =document.getElementById('btn');
+    var oul =document.getElementsByClassName('content')[0];
+
+    btn.onclick=function(){
+        var oli= document.createElement('li')
+        oli.innerHTML=text.value;
+        var arr= document.getElementsByTagName('li');
+        if(arr.length>0){
+            oul.insertBefore(oli,arr[0])
+        }else{
+            oul.appendChild(oli)
+        }
+    }
+
+}
+</script>
+
 		<title>Wai Kai Leung World Music Fun</title>韦启良世界乐迷会
 
 <body>
