@@ -120,11 +120,11 @@ oDiv.removeChild(this.parentNode);
  	</ul>
 	</div>--> 
 	
-	<form action="" method="get">
+	<form action="" method="post">
 	<input type="text" name="name">
 	<label> Name: <br><input type="text" name="name"><br></label>
 		<label> Message: <br><textarea cols="40" rows="5" name="mes"></textarea></label><br>
-	<input type="submit" name="get" value="Post">
+	<input type="submit" name="post" value="Post">
 	</form>
 	
 	<table id="home-table" width="100%" border="2">	
@@ -143,7 +143,7 @@ oDiv.removeChild(this.parentNode);
 	<p></p>
 </body></html>
 	
-	<?php
+<!--	<?php
 $name = $_POST["name"];
 $text = $_POST["mes"];
 $post = $_POST["post"];
