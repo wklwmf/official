@@ -11,25 +11,63 @@ color:#000000;background:#007222;
 				  height: 28px;
 				  margin: 2px auto auto 90%;}
 		</style>
+
 		<script>
 window.onload=function(){
-    var text=document.getElementById('text');
-    var btn =document.getElementById('btn');
-    var oul =document.getElementsByClassName('content')[0];
-
-    btn.onclick=function(){
-        var oli= document.createElement('li')
-        oli.innerHTML=text.value;
-        var arr= document.getElementsByTagName('li');
-        if(arr.length>0){
-            oul.insertBefore(oli,arr[0])
-        }else{
-            oul.appendChild(oli)
-        }
-    }
-
+var oTxt = document.getElementById("txt");
+var oBtn = document.getElementById("btn1");
+var oUl1 = document.getElementById("ul1");
+ 
+ 
+oBtn.onclick=function(){
+var oBox = document.createElement("div");
+oBox.className = "box";
+ 
+//Create Photo
+var oDiv = document.createElement("div");
+oDiv.className = "touxiang";
+oBox.appendChild(oDiv);
+ 
+var oDiv = document.createElement("div");
+oDiv.className = "nicheng";
+oDiv.innerHTML = "Example User Name";
+oBox.appendChild(oDiv);
+ 
+var oDiv = document.createElement("div");
+oDiv.className = "pinglun";
+oDiv.innerHTML = oTxt.value;
+oBox.appendChild(oDiv);
+ 
+var oDiv = document.createElement("div");
+oDiv.className = "shijian";
+var oDate = new Date();
+//oDate.getFullYear
+ 
+oDiv.innerHTML ="Comment Time"+ oDate.getFullYear()+"Year"+(oDate.getMonth()+1)+"Month"+oDate.getDate()+"date"+"<a href='javascript:;'>ɾ��</a>";
+ 
+ 
+ 
+ 
+oBox.appendChild(oDiv);
+ 
+oUl1.appendChild(oBox);
+ 
+/*oBox.insertBefore(oUl1,oDiv[0]);*/
+ 
+var aA = oDiv.getElementsByTagName("a");
+ 
+for(var i = 0;i<aA.length;i++)
+{
+aA[i].onclick=function(){
+oDiv.removeChild(this.parentNode);
 }
+}
+ 
+}
+}
+ 
 </script>
+
 
 		<title>Wai Kai Leung World Music Fun</title></head>
 
@@ -62,12 +100,12 @@ window.onload=function(){
           <th>Comments</th>
          </tr>
          </table>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;留言板因脚本问题暂无法使用，待以后更新……</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Welcome to music world!</p>
 	
-	<embed src="" width="300" height="220"></embed>
+	<!--<embed src="" width="300" height="220"></embed>
 	<textarea rows="10" cols="60">请在此处留言……</textarea><br>
 	<input type="button" value="comment" class="btn" onclick="add()">
-        <table id="home-table" width="100%" border="1">
+        <table id="home-table" width="100%" border="1">-->
 		
 		
 	<!--<input type="text" placeholder="Please input your words..." id="text" />
@@ -75,7 +113,14 @@ window.onload=function(){
     <ul class="content">
     </ul>-->
 		
-		
+<div id="div1" >
+<textarea cols="70" rows="8" id="txt"></textarea><br />
+<input type="button" value="Comment" id="btn1" />
+ 
+<ul id="ul1">
+ 
+</ul>
+</div> 
 		
          <tr>
           <th>知识拓展</th>
