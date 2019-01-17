@@ -20,27 +20,27 @@ height:100%;
   
   .set div:nth-child(1)
   {
-  left:30%;
+  left:10%;
   }
   
     .set div:nth-child(2)
   {
-  left:50%;
+  left:30%;
   }
   
     .set div:nth-child(3)
   {
-  left:70%;
+  left:50%;
   }
   
     .set div:nth-child(4)
   {
-  left:90%;
+  left:70%;
   }
   
     .set div:nth-child(5)
   {
-  left:80%;
+  left:90%;
   }
   
     .set div:nth-child(6)
